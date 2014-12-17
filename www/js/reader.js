@@ -80,7 +80,7 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
 	$scope.bringnextPage = function(){
 	    $scope.isbringnextPageBusy = true;
 	    if($scope.curFeedItems.length > 0 && !$scope.noMoreItems){
-    	    $http.get('/api/feed/getItems/'+$scope.curFeed.feed+'/'+$scope.curFeedItems.length).
+    	    $http.get('http://reader.rssque.com/api/feed/getItems/'+$scope.curFeed.feed+'/'+$scope.curFeedItems.length).
                 success(function(data){
                     $scope.curFeedItems.push.apply($scope.curFeedItems, data);
                     $scope.isbringnextPageBusy = false;
@@ -115,13 +115,13 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
 	    }
 	};
 	
-	$http.get('api/feeds').
+	$http.get('http://reader.rssque.com/api/feeds').
 	    success(function(data){
 			$scope.feeds = data;
 			angular.forEach($scope.feeds, function(feedToGetTitle) {
 				//console.log(feedToGetTitle.title);
 				if(!feedToGetTitle.title){
-					$http.get('/api/feed/getTitle/'+feedToGetTitle.feed).
+					$http.get('http://reader.rssque.com/api/feed/getTitle/'+feedToGetTitle.feed).
 					    success(function(data){
 							feedToGetTitle.title = urldecode(data);
 						}).
@@ -131,7 +131,7 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
 				}
 			});
             //Once we have the list of user's feeds, we can set the last feed the user was reading
-            $http.get('/api/user/getCurFeed').
+            $http.get('http://reader.rssque.com/api/user/getCurFeed').
                 success(function(data){
                     $scope.feeds.forEach(function(innerFeed){
                         if(innerFeed.feed == data){
@@ -161,7 +161,7 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
             var params = { feedID: $scope.curFeed.feed };
             var config = { params: params};
             
-            $http.put('/api/user/setCurFeed', params).
+            $http.put('http://reader.rssque.com/api/user/setCurFeed', params).
                 success(function(data){
                     //console.log('Current Feed is set.');
                 }).
@@ -170,14 +170,14 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
                 });
             
             $scope.isbringnextPageBusy = true;
-            $http.get('/api/feed/getItems/'+$scope.curFeed.feed+'/0').
+            $http.get('http://reader.rssque.com/api/feed/getItems/'+$scope.curFeed.feed+'/0').
                 success(function(data){
                     //console.log(data);
                     $scope.curFeedItems = data;
                     //if no items are received, it means no more items
                     $scope.noMoreItems = (data.length === 0);
 
-					$http.get('/api/user/getReadItems/'+$scope.curFeed.feed).
+					$http.get('http://reader.rssque.com/api/user/getReadItems/'+$scope.curFeed.feed).
 					    success(function(data){
 					        if(data){
 					            if(data.userfeeds){
@@ -249,7 +249,7 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
 		$scope.curActiveItem = id;
 		//console.log(toggledItem);
 		if(!toggledItem.content || toggledItem.content == 'Item content is not available.'){
-			$http.get('/api/item/'+$scope.curFeed.feed+'/'+id).
+			$http.get('http://reader.rssque.com/api/item/'+$scope.curFeed.feed+'/'+id).
 			    success(function(data){
 			        var widthToSet = $("#feed-item-content-inner-"+id).parent().width();
 					data = data.replace(/<script/g, '<rssqueblockedcontent');
@@ -305,7 +305,7 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
 		//console.log(itemtochange);
 		var params = {feed: $scope.curFeed.feed, item: itemtochange.linkhash, state:itemtochange.isread};
 		//console.log(params);
-		$http.put('/api/user/itemchangestate', params).
+		$http.put('http://reader.rssque.com/api/user/itemchangestate', params).
 		    success(function(data){
 			    //console.log(data);
             }).
