@@ -115,7 +115,7 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
 	    }
 	};
 	
-	$http.get('/api/feeds').
+	$http.get('api/feeds').
 	    success(function(data){
 			$scope.feeds = data;
 			angular.forEach($scope.feeds, function(feedToGetTitle) {
