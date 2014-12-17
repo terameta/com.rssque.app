@@ -2,15 +2,21 @@
 <html>
 <head>
 	<title>rssque::your reading experience</title>
-	<link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css">
+	<!--link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css"-->
 	<link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css">
 	<!--link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"-->
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
-	<script>
-    $(document).
-        on('deviceready', navigator.splashscreen.hide());
+	<script type="text/javascript">
+        $(document).
+            on('deviceready', initiator);
+        function initiator(){
+            navigator.splashscreen.hide();
+            console.log("Hedere");
+            alert("Kikiri");
+            alert("Kıkırı");
+        }
     </script>
 </head>
 <body>
