@@ -1,7 +1,7 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.rssque.app" version="0.1.0">
-  <name>rssque</name>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.reados.app" version="0.1.0">
+  <name>reados</name>
   <description>your reading experience</description>
-  <author href="http://rssque.com" email="admin@rssque.com">rssque team</author>
+  <author href="http://reados.com" email="admin@reados.com">reados team</author>
   <content src="index.html"/>
   <preference name="permissions" value="none"/>
   <preference name="phonegap-version" value="3.6.3"/>
