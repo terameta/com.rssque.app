@@ -26,6 +26,14 @@
 	
 	<script src="js/reader.js"></script>
 	<script src="js/reader-addfeed.js"></script>
+	<script type="text/javascript">
+        $(document).
+            on('deviceready', initiator);
+        function initiator(){
+            navigator.splashscreen.show();
+            setTimeout(function(){navigator.splashscreen.hide();} , 2000);
+        }
+    </script>
 </head>
 
 <body ng-controller="mainController" resize>
