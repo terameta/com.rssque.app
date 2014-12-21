@@ -207,6 +207,7 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
                 });
         }
     });
+    */
     
     $scope.fixContentsNoCheck = function(){
         if($scope.curActiveItem){
@@ -221,7 +222,7 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
         }
         return true;
     };
-    
+    /*
     $scope.fixContents = function(fixableItem, dataToFix, widthToSet){
         //console.log(fixableItem);
         //console.log(dataToFix);
