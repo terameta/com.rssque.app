@@ -147,6 +147,7 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
         error(function(data) {
             console.log('Error: ' + data);
             alert("Now we will pull the feeds:fail");
+            alert(data);
         });
     /*
     $scope.$watch( 'itemDisplayModeShowAll', function(newCurFeed, oldCurFeed){
