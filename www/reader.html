@@ -25,6 +25,7 @@
         function initiator(){
             navigator.splashscreen.hide();
             var theUser = JSON.parse(window.localStorage.getItem("readosUser"));
+            
             /**
              * window.localStorage.setItem("readosUser", JSON.stringify(theUser));
              */
@@ -37,7 +38,10 @@
                 }
             };
             
-            showAlert(theUser, "My Title");
+            if(!theUser){
+            	showAlert("You need to login to the system in order to access your feeds");
+            	location.href="signin.html";
+            }
         }
     </script>
 </head>
