@@ -17,9 +17,46 @@
 	<script src="js/reader-addfeed.js"></script>
 	<script>
 		console.log("kememe");
+		
 	</script>
 </head>
 <body ng-controller="mainController" resize>
-	keke {{keke}}
+    <div id="header">
+        <div id="logo">
+            <a href="reader.html">
+                <span><img src="img/rssquelogo.svg" width="34px" height="34px"></span>
+                <!--div class="logo-text"><b>rssque</b></div-->
+    		</a>
+        </div>
+        <!--a href="#/addfeed"><div class="menu-item menu-item-first"><i class="fa fa-plus"></i> Add</div></a-->
+        <div class="menu-item menu-item-first">
+            <select ng-model="curFeed" ng-change="change()" ng-options="feed.title for feed in feeds track by feed.feed" style="width:120px;">
+                <option value="">Choose Feed</option>
+            </select>
+        </div>
+        <!--a href="/logout"><div class="menu-item pull-right"><i class="fa fa-power-off"></i></div></a>
+        <a href="/profile"><div class="menu-item pull-right"><i class="fa fa-user"></i></div></a>
+        <a href="/settings"><div class="menu-item pull-right menu-item-first"><i class="fa fa-cogs"></i></div></a-->
+        <a data-dropdown="#rssqueMenuDropdown" data-horizontal-offset="-150" class="pull-right" style="border-bottom: 0; cursor:pointer;"><div class="menu-item menu-item-first"><i class="fa fa-cogs fa-fw"></i></div></a>
+        <!--a href="#"><div class="menu-item pull-right menu-item-first">{{itemDisplayModeShowAll}}</div></a-->
+    </div>
+    <div id="main">
+        <div ng-view></div>
+    </div>
+    <div id="rssqueMenuDropdown" class="dropdown">
+        <ul class="dropdown-menu">
+            <li><a href="#/addfeed"><i class="fa fa-plus fa-fw"></i> <b>Add New Feed</b></a></li>
+            <li class="dropdown-divider"></li>
+            <li style="padding:10px;padding-bottom:3px;">&nbsp;<b>Item Display Mode</b>
+            </li>
+            <li style="padding-left:10px;padding-right:10px;"><input type="radio" ng-model="itemDisplayModeShowAll" ng-value="true" />Show All Items</li>
+            <li style="padding-left:10px;padding-right:10px;"><input type="radio" ng-model="itemDisplayModeShowAll" ng-value="false" />Show Only Unread Items</li>
+            <li class="dropdown-divider"></li>
+            <li><a href="profile"><i class="fa fa-user fa-fw"></i> <b>Profile</b></a></li>
+            <li><a href="settings"><i class="fa fa-cogs fa-fw"></i> <b>Settings</b></a></li>
+            <li class="dropdown-divider"></li>
+            <li><a href="logout"><i class="fa fa-power-off fa-fw"></i> <b>Logout</b></a></li>
+        </ul>
+    </div>
 </body>
 </html>
