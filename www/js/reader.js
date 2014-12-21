@@ -64,6 +64,7 @@ reader.directive('resize', function($window){
 var readerControllers = angular.module('readerControllers', []);
 
 readerControllers.controller('mainController', ['$scope', '$http', function ($scope, $http){
+    $scope.keke = "Hedere";
 	/*$scope.formData = {};
 	$scope.curFeedItems = [];
 	$scope.curFeedReadItems = [];
@@ -294,7 +295,7 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
 	    } else {
 	        $('#feed-item-content-'+id).removeClass('feed-item-content-visible').addClass('feed-item-content-hidden');
 	        $(".feed-item-footer-visible").removeClass('feed-item-footer-visible').addClass('feed-item-footer-hidden');
-	        /*$(".itemHeaderOpen").removeClass('itemHeaderOpen').addClass("itemHeaderRead");*/
+	        //$(".itemHeaderOpen").removeClass('itemHeaderOpen').addClass("itemHeaderRead");
 	    }
 	};
 	
