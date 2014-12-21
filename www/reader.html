@@ -21,6 +21,7 @@
 	<script>
 	    $(document).
             on('deviceready', initiator);
+        var showAlert;
         function initiator(){
             navigator.splashscreen.hide();
             var theUser = JSON.parse(window.localStorage.getItem("readosUser"));
@@ -28,7 +29,15 @@
              * window.localStorage.setItem("readosUser", JSON.stringify(theUser));
              */
              
-            setTimeout(function(){location.href="reader.html"} , 2000);
+            showAlert = function (message, title) {
+                if (navigator.notification) {
+                    navigator.notification.alert(message, null, title, 'OK');
+                } else {
+                    alert(title ? (title + ": " + message) : message);
+                }
+            };
+            
+            showAlert(theUser, "My Title");
         }
     </script>
 </head>
