@@ -65,7 +65,7 @@ var readerControllers = angular.module('readerControllers', []);
 
 readerControllers.controller('mainController', ['$scope', '$http', function ($scope, $http){
     $scope.keke = "Hedere";
-	/*$scope.formData = {};
+	$scope.formData = {};
 	$scope.curFeedItems = [];
 	$scope.curFeedReadItems = [];
 	$scope.isAddingFeed = false;
@@ -75,7 +75,7 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
 	$scope.curActiveItem = '';
 	
 	$scope.isbringnextPageBusy = false;
-	
+	/*
 	$scope.bringnextPage = function(){
 	    $scope.isbringnextPageBusy = true;
 	    if($scope.curFeedItems.length > 0 && !$scope.noMoreItems){
@@ -113,7 +113,7 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
 	        $scope.isbringnextPageBusy = false;
 	    }
 	};
-	
+	*/
 	$http.get('http://reader.rssque.com/api/feeds').
 	    success(function(data){
 			$scope.feeds = data;
@@ -145,7 +145,7 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
         error(function(data) {
             console.log('Error: ' + data);
         });
-    
+    /*
     $scope.$watch( 'itemDisplayModeShowAll', function(newCurFeed, oldCurFeed){
         $('#main').scrollTop(0);
     });
