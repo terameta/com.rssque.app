@@ -16,6 +16,21 @@
 	<script src="js/reader.js"></script>
 	<script src="js/reader-addfeed.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/reader.css" />
+	
+	<!--Initiation of the application-->
+	<script>
+	    $(document).
+            on('deviceready', initiator);
+        function initiator(){
+            navigator.splashscreen.hide();
+            var theUser = JSON.parse(window.localStorage.getItem("readosUser"));
+            /**
+             * window.localStorage.setItem("readosUser", JSON.stringify(theUser));
+             */
+             
+            setTimeout(function(){location.href="reader.html"} , 2000);
+        }
+    </script>
 </head>
 <body ng-controller="mainController" resize>
     <div id="header">
