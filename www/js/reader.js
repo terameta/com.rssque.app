@@ -19,11 +19,11 @@ reader.config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider
 		.when('/', {
-			templateUrl: '/partials/reader.html'
+			templateUrl: 'partials/reader.html'
 			//,controller: 'mainController'
 		})
 		.when('/addfeed', {
-			templateUrl: '/partials/addfeed.html'
+			templateUrl: 'partials/addfeed.html'
 			//,controller: 'addfeedController'
 		})
 		.otherwise({
