@@ -3,15 +3,18 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>reados::your reading experience</title>
-	<!--link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css"-->
-	<link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css">
-	<!--link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"-->
-	<link rel="stylesheet" type="text/css" href="css/reader.css">
+	<!--Necessary for phonegap-->
 	<script type="text/javascript" src="cordova.js"></script>
-	<script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css">
-	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="css/reader.css">
+	<!--Necessary libraries-->
+	<script src="lib/jquery/dist/jquery.min.js"></script>
+	<script src="lib/angular/angular.min.js"></script>
+	<script src="lib/angular-route/angular-route.min.js"></script>
+	<script src="lib/angular-infinite-scroll/ng-infinite-scroll.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/lib/jquery-dropdown/jquery.dropdown.css" />
+	<script src="lib/jquery-dropdown/jquery.dropdown.min.js"></script>
+	<!--Custom reados files-->
+	<script src="js/reader.js"></script>
+	<script src="js/reader-addfeed.js"></script>
 	
 </head>
 <body ng-controller="mainController" resize>
