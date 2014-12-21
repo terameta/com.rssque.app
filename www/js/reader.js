@@ -1,5 +1,3 @@
-/* http://scotch.io/tutorials/javascript/creating-a-single-page-todo-app-with-node-and-angular */
-
 var reader = angular.module('reader', ['ngRoute', 'readerControllers','infinite-scroll']);
 reader.filter('urlencode', function() {
     //return window.encodeURIComponent;
@@ -66,7 +64,7 @@ reader.directive('resize', function($window){
 var readerControllers = angular.module('readerControllers', []);
 
 readerControllers.controller('mainController', ['$scope', '$http', function ($scope, $http){
-	$scope.formData = {};
+	/*$scope.formData = {};
 	$scope.curFeedItems = [];
 	$scope.curFeedReadItems = [];
 	$scope.isAddingFeed = false;
@@ -290,7 +288,7 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
 	        
 	        $("div.feedContents").scrollTop($("#itemHeader"+id).position().top-70);
 	        $("div.feedContents").scrollTop(($("#itemHeader"+id).outerHeight()-1)*(order-1));
-	        //console.log($("#itemHeader"+id).offset().top);*/
+	        //console.log($("#itemHeader"+id).offset().top);
 	        toggledItem.isread = 'read';
 	        $scope.itemchangestate(toggledItem);
 	    } else {
@@ -312,7 +310,7 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
             error(function(data){
                 //console.log('Error: ' + data);
             });
-	};
+	};*/
 }]);
 
 function urldecode(str) {
