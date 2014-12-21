@@ -44,6 +44,7 @@
         <param name="APP_ID" value="***REMOVED***" />
         <param name="APP_NAME" value="***REMOVED***" />
     </gap:plugin>
+    <gap:plugin name="nl.x-services.plugins.googleplus" version="1.0.7" />
 
     <icon src="icon.png"/>
     <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
