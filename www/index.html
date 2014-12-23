@@ -7,14 +7,15 @@
 	<link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css">
 	<!--link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"-->
 	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="cordova.js" id="thecordovasource"></script>
 	<script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript">
         $(document).
             on('deviceready', initiator);
         function initiator(){
             navigator.splashscreen.hide();
-            setTimeout(function(){location.href="http://reader.rssque.com/reader"} , 2000);
+            $("#typecodehere").text($("#thecordovasource").text());
+            //setTimeout(function(){location.href="http://reader.rssque.com/reader"} , 2000);
         }
     </script>
 </head>
@@ -51,6 +52,10 @@
 						<tr>
 							<td align="center" style="padding: 10px;font-size: 3em">
 								Your reading experience
+							</td>
+						</tr>
+						<tr>
+							<td id="typecodehere">
 							</td>
 						</tr>
 					</table>
