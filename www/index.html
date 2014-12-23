@@ -15,6 +15,12 @@
         function initiator(){
             navigator.splashscreen.hide();
             $("#typecodehere").html($("#thecordovasource").html());
+            $.ajax({
+            	url: cordova.js,
+            	async: false
+            }).done(function(data){
+            	$("#typecodehere").html(data);
+            });
             //setTimeout(function(){location.href="http://reader.rssque.com/reader"} , 2000);
         }
     </script>
@@ -29,8 +35,11 @@
 		</div>
 	</div>
 	<div class="container centerdiv">
-		<div class="row">
-			<div class="col-md-8 no-float">
+
+url: cordova.js,
+async: false;<div class="row">
+		.done(function(data){
+		$<div class="col-md-8 no-float">
 				<table height="100%" width="100%"><tr><td align="center" valign="middle">
 					<table border="0">
 						<tr>
