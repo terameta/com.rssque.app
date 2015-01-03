@@ -21,7 +21,9 @@
 	<script>
 	    $(document).
             on('deviceready', initiator);
+            
         var showAlert;
+        
         function initiator(){
             navigator.splashscreen.hide();
             var theUser = JSON.parse(window.localStorage.getItem("readosUser"));
@@ -40,7 +42,7 @@
             
             if(!theUser){
             	showAlert("You need to login to the system in order to access your feeds");
-            	location.href="signin.html";
+            	location.href="http://www.reados.com/signin.html";
             }
         }
     </script>
