@@ -114,10 +114,10 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
 	    }
 	};
 	*/
-	alert("Now we will pull the feeds");
+	//alert("Now we will pull the feeds");
 	$http.get('http://reader.rssque.com/api/feeds').
 	    success(function(data){
-	        alert("Now we will pull the feeds:pass");
+	        //alert("Now we will pull the feeds:pass");
 			$scope.feeds = data;
 			angular.forEach($scope.feeds, function(feedToGetTitle) {
 				//console.log(feedToGetTitle.title);
@@ -146,8 +146,8 @@ readerControllers.controller('mainController', ['$scope', '$http', function ($sc
         }).
         error(function(data) {
             console.log('Error: ' + data);
-            alert("Now we will pull the feeds:fail");
-            alert(data);
+            //alert("Now we will pull the feeds:fail");
+            //alert(data);
         });
     /*
     $scope.$watch( 'itemDisplayModeShowAll', function(newCurFeed, oldCurFeed){
